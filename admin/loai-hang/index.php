@@ -15,16 +15,14 @@ if (exist_param("btn_list")) {
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_insert")) {
     #lấy dữ liệu từ form
-    $ma_loai = exist_param('categoryId');
+    
     $ten_loai = $_POST["name"];
     //insert vào db
     loai_insert($ten_loai);
 
     //show dữ liệu
     $items = loai_select_all();
-   
     $VIEW_NAME = "list.php";
-    
 } else if (exist_param("btn_edit")) {
     #lấy dữ liệu từ form
     $ma_loai = $_REQUEST['categoryId'];

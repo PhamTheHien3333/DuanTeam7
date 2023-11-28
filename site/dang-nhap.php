@@ -11,7 +11,11 @@ if (exist_param("btn_login")) {
     $user = khach_hang_select_by_username($username);
     if ($user) {
         if ($user['password'] == $mat_khau) {
-
+            if(  $user['role'] == 1 ){
+                header('Location: ../admin/trang-chinh');
+                
+            }
+         else{
             if (exist_param('ghi_nho')) {
                 add_cookie("username", $ma_kh, 30);
                 add_cookie("password", $mat_khau, 30);
@@ -20,10 +24,11 @@ if (exist_param("btn_login")) {
                 delete_cookie("password");
             }
             $_SESSION["user"] = $user;
-            
-            $ten_vai_tro =  $user['role'] == 0 ? "" : "nhân viên ";
+                        
             header('Location: ./index.php ');
-            $ten_vai_tro =  $user['role'] == 0 ? "" : "nhân viên ";
+            
+        }
+                  
         }
         
         else {

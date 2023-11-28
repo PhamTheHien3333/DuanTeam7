@@ -79,7 +79,7 @@
                                 </div>
                             </td>
                             <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
                         </tr>
                         <tr>
                             <td class="align-middle"><img src="../uploads/products/product-2.jpg" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
@@ -100,7 +100,7 @@
                                 </div>
                             </td>
                             <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
                         </tr>
                         <tr>
                             <td class="align-middle"><img src="../uploads/products/product-3.jpg" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
@@ -121,7 +121,7 @@
                                 </div>
                             </td>
                             <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
                         </tr>
                         <tr>
                             <td class="align-middle"><img src="../uploads/products/product-4.jpg" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
@@ -142,7 +142,7 @@
                                 </div>
                             </td>
                             <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
                         </tr>
                         <tr>
                             <td class="align-middle"><img src="../uploads/products/product-5.jpg" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
@@ -163,7 +163,7 @@
                                 </div>
                             </td>
                             <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -173,7 +173,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control p-4" placeholder="Mã giảm giá">
                         <div class="input-group-append">
-                            <button class="btn btn-primary">Dùng mã giảm giá</button>
+                            <button class="btn btn-danger">Dùng mã giảm giá</button>
                         </div>
                     </div>
                 </form>

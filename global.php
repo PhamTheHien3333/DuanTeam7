@@ -3,7 +3,7 @@ session_start();
 /**
  * Định nghĩa các url cần thiết sử dụng trong website
  */
-$ROOT_URL = "/Duan1";
+$ROOT_URL = "/DuAn1-canh";
 $CONTENT_URL = "$ROOT_URL/content";
 $ADMIN_URL = "$ROOT_URL/admin";
 $SITE_URL = "$ROOT_URL/site";
@@ -69,7 +69,7 @@ function get_cookie($name)
 // {
 //     global $SITE_URL;
 //     if (isset($_SESSION['user'])) {
-//         if ($_SESSION['user']['role'] == 1) {
+//         if ($_SESSION['user']['vai_tro'] == 1) {
 //             return;
 //         }
 //         if (strpos($_SERVER['REQUEST_URI'], '/admin/') == false) {

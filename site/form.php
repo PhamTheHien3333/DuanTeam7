@@ -7,18 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/form.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .img-user {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo {
+            margin-top: 25%;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            border: black 1px solid;
+        }
+    </style>
     <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Đăng Nhập & Đăng Ký</title>
 </head>
 
 <body>
-
-
-
     <div class="wrapper">
         <nav class="nav">
             <div class="nav-logo">
-                <p>LOGO .</p>
+                <a href="./index.php" class="text-decoration-none">
+                    <img class="logo" src="../img/logo.jpg" alt="">
+                </a>
             </div>
             <div class="nav-menu" id="navMenu">
                 <ul>
@@ -48,26 +62,26 @@
                     <header>Đăng nhập</header>
                 </div>
                 <form action="../site/dang-nhap.php" method="POST" id="form_login">
-                <div class="input-box">
-                    <input type="text" class="input-field" name="username" placeholder="Tên đăng nhập">
-                    <i class="bx bx-user"></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" class="input-field" name="password" placeholder="Mật khẩu">
-                    <i class="bx bx-lock-alt"></i>
-                </div>
-                <div class="input-box">
-                    <input type="submit" name="btn_login" class="submit" value="Đăng nhập">
-                </div>
-                <div class="two-col">
-                    <div class="one">
-                        <input type="checkbox" id="login-check">
-                        <label for="login-check" name="ghi_nho" checked>Ghi nhớ mật khẩu</label>
+                    <div class="input-box">
+                        <input type="text" class="input-field" name="username" placeholder="Tên đăng nhập">
+                        <i class="bx bx-user"></i>
                     </div>
-                    <div class="two">
-                        <label><a href="#">Quên mật khẩu?</a></label>
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="password" placeholder="Mật khẩu">
+                        <i class="bx bx-lock-alt"></i>
                     </div>
-                </div>
+                    <div class="input-box">
+                        <input type="submit" name="btn_login" class="submit" value="Đăng nhập">
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="login-check">
+                            <label for="login-check" name="ghi_nho" checked>Ghi nhớ mật khẩu</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Quên mật khẩu?</a></label>
+                        </div>
+                    </div>
                 </form>
             </div>
 
@@ -79,15 +93,15 @@
                     <header>Đăng ký</header>
                 </div>
                 <form action="../site/dang-ky.php" method="post" enctype="multipart/form-data" id="form_dang_ki">
-                <div class="two-forms">
-                    <div class="input-box">
-                        <input type="text" class="input-field" name="username" placeholder="Tên đăng nhập">
-                        <i class="bx bx-user"></i>
-                    </div>
-                    <div class="input-box">
-                        <input type="text" class="input-field" name="fullName" placeholder="Họ và tên">
-                        <i class="bx bx-user"></i>
-                    </div>
+                    <div class="two-forms">
+                        <div class="input-box">
+                            <input type="text" class="input-field" name="username" placeholder="Tên đăng nhập">
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" class="input-field" name="fullName" placeholder="Họ và tên">
+                            <i class="bx bx-user"></i>
+                        </div>
                     </div>
                     <div class="input-box">
                         <input type="text" class="input-field" name="email" placeholder="Email">
@@ -111,10 +125,13 @@
                     </div>
                     <input type="hidden" name="id">
                     <input type="hidden" name="status" value="1">
+                    <input type="hidden" name="role" value="0">
+                    <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
                 </form>
             </div>
 
         </div>
+
     </div>
 
 

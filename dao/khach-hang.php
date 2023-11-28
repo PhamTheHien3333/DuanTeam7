@@ -1,18 +1,28 @@
 <?php
 require_once 'pdo.php';
-function khach_hang_insert($username, $mat_khau, $ho_ten, $email, $status)
+function khach_hang_insert_admin($tai_khoan, $mat_khau, $ho_ten, $email, $hinh, $phone, $address, $status, $role)
 {
-    $sql = "INSERT INTO users(username, password, fullName, email, status) VALUES (?, ?, ?, ?, ?)";
-    pdo_execute($sql,$username, $mat_khau, $ho_ten, $email, $status);
+    $sql = "INSERT INTO users(username,password,fullName,email,img,phone,address,status,role) VALUES(?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $tai_khoan, $mat_khau, $ho_ten, $email, $hinh, $phone, $address, $status, $role);
 }
-function khach_hang_update($ma_kh, $mat_khau, $ho_ten, $email, $hinh)
+function khach_hang_insert($username, $mat_khau, $ho_ten, $email, $status, $role)
 {
-    $sql = "UPDATE users SET mat_khau=?,ho_ten=?,email=?,hinh=? WHERE ma_kh=?";
-    pdo_execute($sql, $mat_khau, $ho_ten, $email, $hinh, $ma_kh);
+  try {
+    $sql = "INSERT INTO users(username, password, fullName, email, status, role, address) VALUES (?, ?, ?, ?, ?, ?,'')";
+    pdo_execute($sql, $username, $mat_khau, $ho_ten, $email, $status, $role);
+  } catch (Exception $exc) {
+    $MESSAGE = "Đăng ký thành viên thất bại! Lỗi: " . $exc->getMessage();
+    echo "<script>alert('$MESSAGE');</script>";
+  }
+}
+function khach_hang_update($tai_khoan, $mat_khau, $ho_ten, $email, $hinh, $phone, $address, $kich_hoat, $vai_tro, $ma_kh)
+{
+    $sql = "UPDATE users SET username=?,password=?,fullName=?,email=?,img=?,phone=?,address=?,status=?,role=? WHERE userId=?";
+    pdo_execute($sql,$tai_khoan, $mat_khau, $ho_ten, $email, $hinh, $phone, $address,$kich_hoat, $vai_tro, $ma_kh);
 }
 function khach_hang_delete($ma_kh)
 {
-    $sql = "DELETE FROM users WHERE ma_kh=?";
+    $sql = "DELETE FROM users WHERE userId=?";
     if (is_array($ma_kh)) {
         foreach ($ma_kh as $ma) {
             pdo_execute($sql, $ma);
@@ -36,10 +46,10 @@ function khach_hang_select_by_username($username)
     $sql = "SELECT * FROM users WHERE username=?";
     return pdo_query_one($sql, $username);
 }
-function khach_hang_exist($ma_kh)
+function khach_hang_exist($username)
 {
-    $sql = "SELECT count(*) FROM users WHERE userId=?";
-    return pdo_query_value($sql, $ma_kh) > 0;
+    $sql = "SELECT * FROM users WHERE username=?";
+    return pdo_query_value($sql, $username);
 }
 
 function khach_hang_exist_email($email)
@@ -51,6 +61,6 @@ function khach_hang_exist_email($email)
 function khach_hang_change_password($ma_kh, $mat_khau_moi)
 {
 
-    $sql = "UPDATE users SET mat_khau=? WHERE ma_kh=?";
+    $sql = "UPDATE users SET password=? WHERE userId=?";
     pdo_execute($sql, $mat_khau_moi, $ma_kh);
 }

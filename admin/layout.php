@@ -54,8 +54,8 @@ require_once '../../global.php';
                                 <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <?php
-                                    if (isset($_SESSION['user']) && $_SESSION['user']['hinh'] != "") { ?>
-                                    <img src="<?= $UPLOAD_URL . "/users/" . $_SESSION['user']['hinh'] ?>" width="30"
+                                    if (isset($_SESSION['user']) && $_SESSION['user']['img'] != "") { ?>
+                                    <img src="<?= $UPLOAD_URL . "/users/" . $_SESSION['user']['img'] ?>" width="30"
                                         height="30" class="mb-2 object-fit-cover rounded-circle" alt="">
                                     <?php } else { ?>
                                     <i class="fa fa-user primary-color"></i>

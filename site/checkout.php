@@ -13,7 +13,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -23,211 +23,114 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/stylePay.css">
 </head>
+<style>
+
+</style>
 
 <body>
-<?php
-    include("header.php");
-?>
-
-
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-secondary mb-5">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">Thanh toán</h1>
-            <div class="d-inline-flex">
-                <p class="m-0"><a href="">Trang chủ</a></p>
-                <p class="m-0 px-2">-</p>
-                <p class="m-0">Thanh toán</p>
-            </div>
-        </div>
-    </div>
-    <!-- Page Header End -->
+    <?php
+    include("headerCart.php");
+    ?>
 
 
     <!-- Checkout Start -->
     <div class="container-fluid pt-5">
         <div class="row px-xl-5">
-            <div class="col-lg-8">
+            <div class="col-lg-7">
                 <div class="mb-4">
-                    <h4 class="font-weight-semi-bold mb-4">Địa chỉ thanh toán</h4>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>Họ</label>
-                            <input class="form-control" type="text" placeholder="John">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Tên</label>
-                            <input class="form-control" type="text" placeholder="Doe">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="example@email.com">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Số điện thoại</label>
-                            <input class="form-control" type="text" placeholder="+123 456 789">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Địa chỉ 1</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Địa chỉ 2</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Quốc gia</label>
-                            <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Thành Phố</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>State</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Mã Bưu Chính</label>
-                            <input class="form-control" type="text" placeholder="123">
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="newaccount">
-                                <label class="custom-control-label" for="newaccount">Tạo tài khoản</label>
+                    <h4 class="font-weight-semi-bold mb-4 text-center">Thông tin thanh toán</h4>
+                    <div class="d-flex">
+                        <div class="row col-md-6">
+                            <div class="col-md-12 form-group">
+                                <label class="font-weight-bold text-dark" for="name">Họ và tên:</label>
+                                <input class="form-control custom-input" name="name" id="name" type="text" placeholder="Vui lòng nhập họ và tên">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label class="font-weight-bold text-dark" for="email">Email:</label>
+                                <input class="form-control custom-input" name="email" id="email" type="email" placeholder="Vui lòng nhập email ">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label class="font-weight-bold text-dark" for="phone">Số điện thoại:</label>
+                                <input class="form-control custom-input" name="phone" id="phone" type="phone" placeholder="Vui lòng nhập số điện thoại của bạn">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label class="font-weight-bold text-dark" for="address">Địa chỉ:</label>
+                                <br>
+                                <!-- <input class="form-control" type="text" placeholder="Vui lòng nhập địa chỉ hiện tại của bạn"> -->
+                                <textarea class="custom-textarea" name="address" id="address" cols="100" rows="8"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-12 form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="shipto">
-                                <label class="custom-control-label" for="shipto"  data-toggle="collapse" data-target="#shipping-address">Ship to different address</label>
+                        <div class="row col-md-6">
+                            <h5 class="font-weight-semi-bold text-center thannhtoan">Chọn phương thức thanh toán</h5>
+                            <div class="card-body-pay ">
+                            <div class="d-flex checkbox-group ml-4">
+                                    <div>
+                                        <img src="../img/atm.png" style="width: 26px; height: 26px;" alt="">
+                                        <label class="checkbox-label font-weight-bold text-dark text-pay" for="pay">Thẻ tín  dụng</label>
+                                    </div>
+                                    <input type="checkbox" class="checkbox" name="payment" id="pay" onclick="handleCheckboxChange(this)">
+                                </div>
+                                <div class="d-flex checkbox-group ml-4">
+                                    <div>
+                                        <img src="../img/payal.png" style="width: 26px; height: 26px;" alt="">
+                                        <label class="checkbox-label-payal font-weight-bold text-dark text-pay" for="payal">Payal</label>
+                                    </div>
+                                    <input type="checkbox" class="checkbox" name="payment" id="payal" onclick="handleCheckboxChange(this)">
+                                </div>
+                                <div class="d-flex checkbox-group ml-4">
+                                    <div>
+                                        <img src="../img/momo.png" style="width: 26px; height: 26px;" alt="">
+                                        <label class="checkbox-label-momo font-weight-bold text-dark text-pay" for="momo">Momo</label>
+                                    </div>
+                                    <input type="checkbox" class="checkbox" name="payment" id="momo" onclick="handleCheckboxChange(this)">
+                                </div>
+                                <div class="d-flex checkbox-group ml-4">
+                                    <div>
+                                        <img src="../img/thanhtoan.png" style="width: 26px; height: 26px;" alt="">
+                                        <label class="checkbox-label-payment font-weight-bold text-dark text-pay" for="payment">Thanh toán khi nhận hàng</label>
+                                    </div>
+                                    <input type="checkbox" class="checkbox" name="payment" id="payment " onclick="handleCheckboxChange(this)">
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="collapse mb-4" id="shipping-address">
-                    <h4 class="font-weight-semi-bold mb-4">Địa chỉ giao hàng</h4>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>Họ</label>
-                            <input class="form-control" type="text" placeholder="John">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Tên</label>
-                            <input class="form-control" type="text" placeholder="Doe">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="example@email.com">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Số điện thoại</label>
-                            <input class="form-control" type="text" placeholder="+123 456 789">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Địa chỉ 1</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Địa chỉ 2</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Quốc gia</label>
-                            <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Thành Phố</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>State</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Mã Bưu Chính</label>
-                            <input class="form-control" type="text" placeholder="123">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0">
+                    <div class="card-header bg-color-pay border-0">
                         <h4 class="font-weight-semi-bold m-0">Tổng dơn hàng</h4>
                     </div>
                     <div class="card-body">
                         <h5 class="font-weight-medium mb-3">Sản phẩm</h5>
                         <div class="d-flex justify-content-between">
-                            <p>Colorful Stylish Shirt 1</p>
-                            <p>$150</p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p>Colorful Stylish Shirt 2</p>
-                            <p>$150</p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p>Colorful Stylish Shirt 3</p>
-                            <p>$150</p>
+                            <p>GIÀY THỂ THAO UNISEX REEBOK TURBO RESTYLE
+                            <p class="text-dark font-weight-bold">x 2</p>
+                            </p>
+                            <p class="text-danger">2.190.000 VND</p>
                         </div>
                         <hr class="mt-0">
                         <div class="d-flex justify-content-between mb-3 pt-1">
                             <h6 class="font-weight-medium">Giá sản phẩm</h6>
-                            <h6 class="font-weight-medium">$150</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Vận chuyển</h6>
-                            <h6 class="font-weight-medium">$10</h6>
+                            <h6 class="font-weight-medium text-danger">2.190.000 VND</h6>
                         </div>
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
                         <div class="d-flex justify-content-between mt-2">
                             <h5 class="font-weight-bold">Tổng tiền</h5>
-                            <h5 class="font-weight-bold">$160</h5>
+                            <h5 class="font-weight-medium text-danger">2.190.000 VND</h5>
                         </div>
                     </div>
+
                 </div>
-                <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Phương thức thanh toán</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                <label class="custom-control-label" for="paypal">Paypal</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
-                                <label class="custom-control-label" for="directcheck">Thanh toán trực tiếp</label>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
-                                <label class="custom-control-label" for="banktransfer">Chuyển khoản ngân hàng</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer border-secondary bg-transparent">
-                        <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán</button>
-                    </div>
+                <div>
+                    <button class="btn btn-primary btn-block font-weight-bold border-0 py-3 px-5 submit-pay" type="submit">Đặt hàng</button>
                 </div>
             </div>
         </div>
+
     </div>
     <!-- Checkout End -->
 
@@ -253,6 +156,16 @@
 
     <!-- Template Javascript -->
     <script src="../content/js/main.js"></script>
+    <script>
+        function handleCheckboxChange(checkbox) {
+            var checkboxes = document.getElementsByName(checkbox.name);
+            checkboxes.forEach(function(item) {
+                if (item !== checkbox) {
+                    item.checked = false;
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

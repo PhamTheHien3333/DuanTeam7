@@ -390,3 +390,75 @@ $(document).ready(function () {
         },
     });
 });
+ // Get the login and registration forms
+const loginForm = document.getElementById('form_login');
+const registrationForm = document.getElementById('form_dang_ki');
+
+// Get the input fields for the login form
+const loginUsernameInput = document.getElementById('username');
+const loginPasswordInput = document.getElementById('password');
+
+// Get the input fields for the registration form
+const registrationUsernameInput = document.getElementById('username');
+const registrationFullNameInput = document.getElementById('fullName');
+const registrationEmailInput = document.getElementById('email');
+const registrationPasswordInput = document.getElementById('password');
+
+// Create error spans for the login form
+const loginUsernameErrorSpan = document.createElement('span');
+loginUsernameErrorSpan.classList.add('error');
+loginForm.insertBefore(loginUsernameErrorSpan, loginUsernameInput.parentNode);
+
+const loginPasswordErrorSpan = document.createElement('span');
+loginPasswordErrorSpan.classList.add('error');
+loginForm.insertBefore(loginPasswordErrorSpan, loginPasswordInput.parentNode);
+
+// Create error spans for the registration form
+const registrationUsernameErrorSpan = document.createElement('span');
+registrationUsernameErrorSpan.classList.add('error');
+registrationForm.insertBefore(registrationUsernameErrorSpan, registrationUsernameInput.parentNode);
+
+const registrationFullNameErrorSpan = document.createElement('span');
+registrationFullNameErrorSpan.classList.add('error');
+registrationForm.insertBefore(registrationFullNameErrorSpan, registrationFullNameInput.parentNode);
+
+const registrationEmailErrorSpan = document.createElement('span');
+registrationEmailErrorSpan.classList.add('error');
+registrationForm.insertBefore(registrationEmailErrorSpan, registrationEmailInput.parentNode);
+
+const registrationPasswordErrorSpan = document.createElement('span');
+registrationPasswordErrorSpan.classList.add('error');
+registrationForm.insertBefore(registrationPasswordErrorSpan, registrationPasswordInput.parentNode);
+
+// Add event listeners to the login and registration forms
+loginForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const loginUsernameValue = loginUsernameInput.value.trim();
+  const loginPasswordValue = loginPasswordInput.value.trim();
+
+  let isValid = true;
+
+  if (loginUsernameValue === '') {
+    loginUsernameErrorSpan.textContent = 'Vui lòng nhập tên đăng nhập của bạn.';
+    isValid = false;
+    loginUsernameInput.focus();
+  } else {
+    loginUsernameErrorSpan.textContent = '';
+  }
+
+  if (loginPasswordValue === '') {
+    loginPasswordErrorSpan.textContent = 'Vui lòng nhập mật khẩu của bạn.';
+    isValid = false;
+    loginPasswordInput.focus();
+  } else {
+    loginPasswordErrorSpan.textContent = '';
+  }
+
+  if (isValid) {
+    // Submit the form here
+    loginForm.submit();
+  }
+});
+
+

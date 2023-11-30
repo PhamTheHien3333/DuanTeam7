@@ -1,9 +1,9 @@
 <?php
 require '../../global.php';
 require '../../dao/khach-hang.php';
-if (isset($_GET['ma_kh'])) {
+if (isset($_GET['userId'])) {
 
-    $result = khach_hang_exist($_GET['ma_kh']);
+    $result = khach_hang_exist($_GET['userId']);
     if ($result == true) {
         echo json_encode(false);
     } else {
@@ -18,9 +18,9 @@ if (isset($_GET['email'])) {
         echo json_encode(true);
     }
 }
-if (isset($_POST['ma_kh'])) {
+if (isset($_POST['userId'])) {
     # code...
-    $result = khach_hang_exist($_POST['ma_kh']);
+    $result = khach_hang_exist($_POST['userId']);
     if ($result == true) {
         echo json_encode(true);
     } else {

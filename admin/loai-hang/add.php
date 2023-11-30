@@ -9,7 +9,7 @@
                         <input type="text" name="categoryId" class="form-control" disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="categoryId" class="form-label">Tên loại</label>
+                        <label for="name" class="form-label">Tên loại</label>
                         <input type="text" name="name" class="form-control" required>
                     </div>
                     <div class="mb-3 text-center">

@@ -42,7 +42,7 @@
   <div class="d-flex py-3 px-xl-5">
       <div class="col-lg-3 d-none d-lg-block">
           <a href="" class="text-decoration-none">
-              <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+              <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">C</span>DH</h1>
           </a>
       </div>
       <div class="col-lg-6 col-6 text-left">
@@ -84,9 +84,18 @@
               </a>
               <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
                   <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-                    <a href="#" class="nav-link" data-toggle="dropdown">Nike</a>                     
-                    <a href="" class="nav-item nav-link">Adidas</a>
-                    <a href="" class="nav-item nav-link">Converse</a>
+                  <?php
+                include '../dao/pdo.php';
+                $conn = pdo_get_connection();
+                $sql = "SELECT * FROM categories";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute();
+                while ($row = $stmt->fetch()) {
+                    echo "<a href='shop.php?category=" . $row['categoryId'] . "' class='nav-link'>" . $row['name'] . "</a>";
+                }
+
+                $conn = null;
+                ?>
                   </div>
               </nav>
           </div>
@@ -102,7 +111,7 @@
                       <div class="navbar-nav mr-auto py-0">
                           <a href="index.php" class="nav-item nav-link active">Trang chủ</a>
                           <a href="shop.php" class="nav-item nav-link">Sản phẩm</a>
-                          <a href="#" class="nav-item nav-link">Giới thiệu</a>
+                          <a href="gioithieu.php" class="nav-item nav-link">Giới thiệu</a>
                           <a href="#" class="nav-item nav-link">Bài viết</a>
                           <a href="contact.php" class="nav-item nav-link">Liên hệ</a>
 

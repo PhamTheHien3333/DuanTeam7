@@ -1,5 +1,6 @@
 <?php
 require_once 'pdo.php';
+
 function hang_hoa_insert($ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta)
 {
     if (empty($mo_ta)) {
@@ -10,12 +11,10 @@ function hang_hoa_insert($ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_bie
     pdo_execute($sql, $ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet == 1, $so_luot_xem, $ngay_nhap, $mo_ta);
     $hinh = substr($hinh, 0, 1406);
 }
-
-function hang_hoa_update( $ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta, $ma_hh)
+function hang_hoa_update($ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta,$ma_hh)
 {
-    $sql = "UPDATE products SET name=?, price=?, sale=?, img=?, categoryId=?, special=?, view=?, date=?, depict=? WHERE productId=?";
-    pdo_execute($sql, $ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet == 1, $so_luot_xem, $ngay_nhap, $mo_ta, $ma_hh);
-    
+    $sql = "UPDATE products SET name=?, price=?, sale=?, img=?, categoryId=?, special=?, view=?, date=?, depict=? Where productId=?";
+    pdo_execute($sql,$ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta, $ma_hh );
 }
 function hang_hoa_delete($ma_hh)
 {
@@ -35,7 +34,7 @@ function hang_hoa_select_all()
 }
 function hang_hoa_select_by_id($ma_hh)
 {
-    $sql = "SELECT * FROM products WHERE productId=?";
+    $sql = "SELECT * FROM products WHERE productId= ?";
     return pdo_query_one($sql, $ma_hh);
 }
 function hang_hoa_exist($ma_hh)
@@ -77,8 +76,8 @@ function hang_hoa_select_by_loai($ma_loai)
 function hang_hoa_select_keyword($keyword)
 {
     $sql = "SELECT * FROM products hh "
-        . " JOIN categories lo ON lo.categoryId=hh.categoryId "
-        . " WHERE name LIKE ? OR name LIKE ?";
+        . " JOIN loai lo ON lo.categoryId=hh.categoryId "
+        . " WHERE ten_hh LIKE ? OR ten_loai LIKE ?";
     return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 }
 function hang_hoa_select_page($order, $limit)

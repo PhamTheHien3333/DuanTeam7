@@ -66,12 +66,12 @@
                         
                         <div class="form-group col-sm-4">
                             <label for="price" class="form-label">Đơn giá (vnđ)</label>
-                            <input type="text" name="price" id="price" class="form-control" value="<?=  $hang_hoa_info['price'] ?>">
+                            <input type="text" name="price" id="price" class="form-control" value="<?=  $hang_hoa_info['price'] ?>" >
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="sale" class="form-label">Giảm giá (vnđ)</label>
-                            <input type="text" name="sale" id="sale" class="form-control" required
-                            value="<?=  $hang_hoa_info['sale'] ?>">
+                            <input type="text" name="sale" id="sale" class="form-control" value="<?=  $hang_hoa_info['sale'] ?>" required
+                                >
                         </div>
                     </div>
                     <div class="row">
@@ -84,23 +84,23 @@
                             <div class="form-control">
                                 <label class="radio-inline  mr-3">
                                     <input type="radio" value="1" name="special" >Đặc
-                                    biệt <?= !$hang_hoa_info ? 'special' : '' ?> 
+                                    biệt
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" value="0" name="special"
-                                        >Bình thường <?= !$hang_hoa_info ? 'special' : '' ?>
+                                        >Bình thường
                                 </label>
                             </div>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="date" class="form-label">Ngày nhập</label>
                             <input type="date" name="date" id="date" class="form-control" required
-                            value="<?=  $hang_hoa_info['date'] ?>"    >
+                                >
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="view" class="form-label">Số lượt xem</label>
                             <input type="text" name="view" id="view" readonly class="form-control"
-                            value="<?=  $hang_hoa_info['view'] ?>"    >
+                                >
                         </div>
                     </div>
                     <div class="row">
@@ -108,7 +108,7 @@
                             <label for="depict" class="form-label">Mô tả sản phẩm</label>
                             <textarea id="txtarea" spellcheck="false" name="depict"
                                 class="form-control form-control-lg mb-3" id="textareaExample"
-                                rows="3" ><?=  $hang_hoa_info['depict'] ?></textarea>
+                                rows="3"></textarea>
                         </div>
                     </div>
 

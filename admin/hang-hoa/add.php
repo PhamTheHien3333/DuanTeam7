@@ -72,8 +72,8 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12">
-                            <label for="depict" class="form-label">Mô tả sản phẩm</label>
-                            <textarea id="txtarea" spellcheck="false" name="depict"
+                            <label for="describe" class="form-label">Mô tả sản phẩm</label>
+                            <textarea id="txtarea" spellcheck="false" name="describe"
                                 class="form-control form-control-lg mb-3" id="textareaExample" rows="3"></textarea>
                         </div>
                     </div>

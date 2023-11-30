@@ -34,11 +34,11 @@
     <!-- Page Header Start -->
     <div class="container-fluid bg-secondary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 200px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">Liên hệ</h1>
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Bài viết</h1>
             <div class="d-inline-flex">
                 <p class="m-0"><a href="">Trang chủ</a></p>
                 <p class="m-0 px-2">-</p>
-                <p class="m-0">Liên hệ</p>
+                <p class="m-0">Bài viết</p>
             </div>
         </div>
     </div>
@@ -48,50 +48,41 @@
     <!-- Contact Start -->
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Liên hệ cho chúng tôi về bất cứ câu hỏi nào</span></h2>
+            <h2 class="section-title px-5"><span class="px-2">Các bài viết của chúng tôi</span></h2>
         </div>
         <div class="row px-xl-5">
             <div class="col-lg-7 mb-5">
                 <div class="contact-form">
                     <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                        <div class="control-group">
-                            <input type="text" class="form-control" id="name" placeholder="Nhập tên"
-                                required="required" data-validation-required-message="Xin hãy nhập tên" />
-                            <p class="help-block text-danger"></p>
+                        <div class="control-group mb-4">
+                            <b>Lịch sử</b>
+                            <p><a href="#">Sự ra đời của giày thể thao</a></p>
                         </div>
-                        <div class="control-group">
-                            <input type="email" class="form-control" id="email" placeholder="Nhập email"
-                                required="required" data-validation-required-message="Xin hãy nhập email" />
-                            <p class="help-block text-danger"></p>
+                        <div class="control-group mb-4">
+                           <b>Lịch sử</b>
+                           <p><a href="#">Đôi giày thể thao đầu tiên</a></p>
                         </div>
-                        <div class="control-group">
-                            <input type="text" class="form-control" id="subject" placeholder="Nhập tiêu đề"
-                                required="required" data-validation-required-message="Xin hãy nhập tiêu đề" />
-                            <p class="help-block text-danger"></p>
+                        <div class="control-group mb-4">
+                           <b>Công nghệ</b>
+                           <p><a href="#">Cấu tạo của giày thể thao</a></p>
                         </div>
-                        <div class="control-group">
-                            <textarea class="form-control" rows="6" id="message" placeholder="Nội dung"
-                                required="required"
-                                data-validation-required-message="Xin hãy nhập nội dung"></textarea>
-                            <p class="help-block text-danger"></p>
+                        <div class="control-group mb-4">
+                           <b>Công ty</b>
+                           <p><a href="#">Công ty sản xuất giày thể thao nhiều nhất thể giới</a></p>
                         </div>
-                        <div>
-                            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Gửi</button>
-                        </div>
-                    </form>
                 </div>
             </div>
             <div class="col-lg-5 mb-5">
-                <h5 class="font-weight-semi-bold mb-3">Thông tin</h5>
-                <p>###</p>
-                <div class="d-flex flex-column mb-3">
+                <h5 class="font-weight-semi-bold mb-3">CDH</h5>
+                <p>CDH luôn là những lựa chọn cho những người thích và đam mê các loại giày xịn, đẹp và đặt biệt là rẻ. Vì thế, hãy đến với CDH
+                    nơi bạn có thể săn đón được những đôi giày mà bạn yêu thích cũng những là xịn xò nhất mà bạn từng được thấy.
+                </p>
+                <div class="d-flex flex-column mb-4">
                     <h5 class="font-weight-semi-bold mb-3">Địa chỉ</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Lê Bình, Cái Răng, Cần Thơ</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>mcanhXXXX@gmail.com</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>084688XXXX </p>
+                    <p class="mb-3"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Lê Bình, Cái Răng, Cần Thơ</p>
+                    <p class="mb-3"><i class="fa fa-envelope text-primary mr-3"></i>mcanhXXXX@gmail.com</p>
+                    <p class="mb-3"><i class="fa fa-phone-alt text-primary mr-3"></i>084688XXXX</p>
                 </div>
-                
             </div>
         </div>
     </div>

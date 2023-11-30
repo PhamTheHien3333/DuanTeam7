@@ -112,7 +112,7 @@
                           <a href="index.php" class="nav-item nav-link active">Trang chủ</a>
                           <a href="shop.php" class="nav-item nav-link">Sản phẩm</a>
                           <a href="gioithieu.php" class="nav-item nav-link">Giới thiệu</a>
-                          <a href="#" class="nav-item nav-link">Bài viết</a>
+                          <a href="baiviet.php" class="nav-item nav-link">Bài viết</a>
                           <a href="contact.php" class="nav-item nav-link">Liên hệ</a>
 
                       </div>

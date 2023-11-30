@@ -16,7 +16,7 @@
 
                             $ten_loai = isset($_POST['name']) ? $_POST['name'] : '';
                         ?>
-                            value="<?= $ten_loai ?>"> 
+                            value="<?= $loai_info['name'] ?>"> 
                     </div>
                     <div class="mb-3 text-center">
                         <input type="hidden" name="categoryId" value="<?= $ma_loai ?>">

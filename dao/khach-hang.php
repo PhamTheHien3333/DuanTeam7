@@ -46,6 +46,12 @@ function khach_hang_select_by_username($username)
     $sql = "SELECT * FROM users WHERE username=?";
     return pdo_query_one($sql, $username);
 }
+function khach_hang_exist_by_email($email) {
+    $sql = "SELECT COUNT(*) FROM users WHERE email = ?";
+    $row = pdo_query_one($sql, $email);
+
+    return $row['COUNT(*)'] > 0;
+}
 function khach_hang_exist($username)
 {
     $sql = "SELECT * FROM users WHERE username=?";

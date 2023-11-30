@@ -2,7 +2,11 @@
 require '../global.php';
 require '../dao/khach-hang.php';
 
+// Khởi tạo biến $MESSAGE với giá trị ban đầu là rỗng
+$MESSAGE = '';
 
+// Khởi tạo biến kiểm tra lỗi
+$errorOccurred = false;
 
 if (exist_param("btn_login")) {
     $username =  $_POST["username"];
@@ -11,40 +15,37 @@ if (exist_param("btn_login")) {
     $user = khach_hang_select_by_username($username);
     if ($user) {
         if ($user['password'] == $mat_khau) {
-            if(  $user['role'] == 1 ){
+            if ($user['role'] == 1) {
                 header('Location: ../admin/trang-chinh');
-                
-            }
-         else{
-            if (exist_param('ghi_nho')) {
-                add_cookie("username", $ma_kh, 30);
-                add_cookie("password", $mat_khau, 30);
+                exit(); // Thêm dòng này để dừng thực thi mã tiếp theo
             } else {
-                delete_cookie("username");
-                delete_cookie("password");
+                if (exist_param('ghi_nho')) {
+                    add_cookie("username", $ma_kh, 30);
+                    add_cookie("password", $mat_khau, 30);
+                } else {
+                    delete_cookie("username");
+                    delete_cookie("password");
+                }
+                $_SESSION["user"] = $user;
+                header('Location: ./index.php');
+                exit(); // Thêm dòng này để dừng thực thi mã tiếp theo
             }
-            $_SESSION["user"] = $user;
-                        
-            header('Location: ./index.php ');
-            
-        }
-                  
-        }
-        
-        else {
+        } else {
             $MESSAGE = "Sai mật khẩu!";
-            echo "<script>
-        alert('Không thể đăng nhập vì . " . $MESSAGE . "'); 
-   </script>";
+            $errorOccurred = true; // Đánh dấu rằng có lỗi xảy ra
         }
-    } 
-    else{
+    } else {
         $MESSAGE = "Sai tên đăng nhập!";
-        echo "<script>
-    alert('Không thể đăng nhập vì ." . $MESSAGE . "'); 
-</script>";
+        $errorOccurred = true; // Đánh dấu rằng có lỗi xảy ra
     }
-  
-} else {
 
+    // Nếu có lỗi, thực hiện Redirect để tải lại trang mà không giữ lại thông báo lỗi
+    if ($errorOccurred) {
+        require './form.php';
+        exit(); // Thêm dòng này để dừng thực thi mã tiếp theo
+    }
 }
+
+// Hiển thị form và thông báo lỗi
+
+?>

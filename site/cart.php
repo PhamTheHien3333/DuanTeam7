@@ -33,7 +33,7 @@
 
     <!-- Page Header Start -->
     <div class="container-fluid bg-secondary mb-5">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 200px">
             <h1 class="font-weight-semi-bold text-uppercase mb-3">Giỏ hàng</h1>
             <div class="d-inline-flex">
                 <p class="m-0"><a href="">Trang chủ</a></p>
@@ -63,7 +63,7 @@
                     <tbody class="align-middle">
 
                         <?php
-                        require '../connect.php';
+                        require '../global.php';
                         $cookie_data = $_COOKIE['cart'];
                         $cart_data = json_decode($cookie_data, true);
 

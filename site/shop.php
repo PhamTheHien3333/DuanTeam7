@@ -58,6 +58,29 @@
                                     </div>
                                 </div>
                             </form>
+                            <div class="dropdown ml-4">
+                                <button class="btn border dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                            Loại
+                                        </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
+                                    <a class="dropdown-item" href="#">Adidas</a>
+                                    <a class="dropdown-item" href="#">Nike</a>
+                                    <a class="dropdown-item" href="#">Converse</a>
+                                    <?php
+                // include '../dao/pdo.php';
+                // $conn = pdo_get_connection();
+                // $sql = "SELECT * FROM categories";
+                // $stmt = $conn->prepare($sql);
+                // $stmt->execute();
+                // while ($row = $stmt->fetch()) {
+                //     echo "<a href='shop.php?category=" . $row['categoryId'] . "' class='dropdown-item'>" . $row['name'] . "</a>";
+                // }
+
+                $conn = null;
+                ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <?php

@@ -13,7 +13,7 @@ if (isset($_POST['btn_register'])) {
 
     $mat_khau = md5($password);
 
-    if (khach_hang_exist($username)) {
+    if (khach_hang_exist($ma_kh)) {
         $MESSAGE = "Tên đăng nhập đã tồn tại!";
         echo "<script>alert('$MESSAGE');</script>";
     } else {
@@ -21,13 +21,12 @@ if (isset($_POST['btn_register'])) {
             khach_hang_insert($username, $mat_khau, $ho_ten, $email, $status, $role);
             $_SESSION['id'] = $ma_kh;
             $_SESSION['password'] = $password;
-            $_SESSION['username'] = $username;
-            header('location: form.php');
+            $MESSAGE = "Đăng ký thành viên thành công!";
           
+            header('location: form.php');
+            echo "<script>alert('$MESSAGE');</script>";
         } catch (Exception $exc) {
             $MESSAGE = "Đăng ký thành viên thất bại! Lỗi: " . $exc->getMessage();
-
-            echo "chưa rồi"; 
             echo "<script>alert('$MESSAGE');</script>";
         }
     }

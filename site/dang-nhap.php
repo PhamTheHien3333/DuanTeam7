@@ -3,10 +3,7 @@ require '../global.php';
 require '../dao/khach-hang.php';
 
 // Khởi tạo biến $MESSAGE với giá trị ban đầu là rỗng
-$MESSAGE = '';
 
-// Khởi tạo biến kiểm tra lỗi
-$errorOccurred = false;
 
 if (exist_param("btn_login")) {
     $username =  $_POST["username"];
@@ -17,7 +14,6 @@ if (exist_param("btn_login")) {
         if ($user['password'] == $mat_khau) {
             if ($user['role'] == 1) {
                 header('Location: ../admin/trang-chinh');
-                exit(); // Thêm dòng này để dừng thực thi mã tiếp theo
             } else {
                 if (exist_param('ghi_nho')) {
                     add_cookie("username", $ma_kh, 30);
@@ -26,26 +22,20 @@ if (exist_param("btn_login")) {
                     delete_cookie("username");
                     delete_cookie("password");
                 }
-                $_SESSION["user"] = $user;
-                header('Location: ./index.php');
-                exit(); // Thêm dòng này để dừng thực thi mã tiếp theo
+                $_SESSION["username"] = $user;
+                header('Location: ./index.php ');
             }
         } else {
             $MESSAGE = "Sai mật khẩu!";
-            $errorOccurred = true; // Đánh dấu rằng có lỗi xảy ra
+            echo "<script>
+        alert('Không thể đăng nhập vì . " . $MESSAGE . "'); 
+   </script>";
         }
     } else {
         $MESSAGE = "Sai tên đăng nhập!";
-        $errorOccurred = true; // Đánh dấu rằng có lỗi xảy ra
-    }
-
-    // Nếu có lỗi, thực hiện Redirect để tải lại trang mà không giữ lại thông báo lỗi
-    if ($errorOccurred) {
-        require './form.php';
-        exit(); // Thêm dòng này để dừng thực thi mã tiếp theo
+        echo "<script>
+        alert('Không thể đăng nhập vì . " . $MESSAGE . "'); 
+   </script>";
     }
 }
 
-// Hiển thị form và thông báo lỗi
-
-?>

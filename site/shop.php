@@ -68,6 +68,8 @@
                     ?>
 
                         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                            
+                        <a href="./detail.php?productId=<?= $product['productId'] ?> ">
                             <div class="card product-item border-0 mb-4">
                                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                                     <img class="img-fluid w-100" src="../uploads/products/<?= $product['img']; ?>" alt="">
@@ -84,6 +86,7 @@
                                     <a href="./checkout.php" class="btn btn-sm text-dark nav-item nav-link p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     <?php } ?>
                     <div class="col-12 pb-1">

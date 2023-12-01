@@ -80,8 +80,8 @@
                     </div>
                     <span id="login-password-error" class="text-danger error-message"></span>
                     <span id="register-fullname-error" class="error-message"></span>
-                    <?php  if ($errorOccurred) : ?>
-                        <div class="text-danger error1" style="display: block; size: 30px; font-weight: bold; padding-left: 15px; padding-bottom: 2px;"><?php echo $MESSAGE; ?></div>
+                    <?php if (!empty($MESSAGE)) : ?>
+                        <div class="text-danger" style="display: block; size: 30px; font-weight: bold; padding-left: 15px; padding-bottom: 2px; "><?php echo $MESSAGE; ?></div>
                     <?php endif; ?>
                     <div class="input-box">
                         <input type="submit" name="btn_login" class="submit" value="Đăng nhập">
@@ -131,6 +131,9 @@
                     <div class="input-box">
                         <input type="submit" name="btn_register" class="submit" value="Đăng ký">
                     </div>
+                    <input type="hidden" name="id">
+                    <input type="hidden" name="status" value="1">
+                    <input type="hidden" name="role" value="0">
                 </form>
             </div>
         </div>

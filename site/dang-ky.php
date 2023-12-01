@@ -2,39 +2,33 @@
 session_start();
 require '../dao/khach-hang.php';
 
-// Khởi tạo biến $MESSAGE với giá trị ban đầu là rỗng
-$MESSAGE = "";
-
 if (isset($_POST['btn_register'])) {
-    $ma_kh = isset($_POST['id']) ? $_POST['id'] : '';
+    $ma_kh = $_POST['id'];
     $password = $_POST['password'];
     $username = $_POST['username'];
     $ho_ten = $_POST['fullName'];
     $email = $_POST['email'];
-    $status = isset($_POST['status']) ? $_POST['status'] : '';
-    $role = isset($_POST['role']) ? $_POST['role'] : '';
+    $status = $_POST['status'];
+    $role = $_POST['role'];
 
     $mat_khau = md5($password);
 
-    if (khach_hang_exist($username)) {
+    if (khach_hang_exist($ma_kh)) {
         $MESSAGE = "Tên đăng nhập đã tồn tại!";
-    }
-    elseif (khach_hang_exist_by_email($email)) {
-        $MESSAGE  = "Email đã được sử dụng";
+        echo "<script>alert('$MESSAGE');</script>";
     } else {
         try {
             khach_hang_insert($username, $mat_khau, $ho_ten, $email, $status, $role);
             $_SESSION['id'] = $ma_kh;
             $_SESSION['password'] = $password;
-            $_SESSION['username'] = $username;
+            $MESSAGE = "Đăng ký thành viên thành công!";
+          
             header('location: form.php');
-            exit();
+            echo "<script>alert('$MESSAGE');</script>";
         } catch (Exception $exc) {
             $MESSAGE = "Đăng ký thành viên thất bại! Lỗi: " . $exc->getMessage();
+            echo "<script>alert('$MESSAGE');</script>";
         }
     }
 }
-
-// Hiển thị form và thông báo lỗi
-require './dangkyloi.php';
 ?>

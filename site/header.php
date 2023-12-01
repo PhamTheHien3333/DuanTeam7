@@ -1,4 +1,5 @@
-  <!-- Topbar Start -->
+<?php session_start();
+?>
   <style>
       .header-btn {
           width: 50px;
@@ -38,6 +39,10 @@
         height: 40px;
         border-radius: 50%;
       }
+      header{
+    position: relative;
+}
+
   </style>
   <div class="d-flex py-3 px-xl-5">
       <div class="col-lg-3 d-none d-lg-block">
@@ -62,8 +67,8 @@
          <i>
          <img src="../img/cat-1.jpg" class="img-user" alt="">
          </i>
-          <!-- <i class="fas fa-user "></i> -->
           </a>
+
           <a href="cart.php" class=" border header-btn header-cart">
               <i class="fas fa-shopping-cart "></i>
               <span class="cart-number">3</span>

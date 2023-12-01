@@ -3,7 +3,7 @@ session_start();
 /**
  * Định nghĩa các url cần thiết sử dụng trong website
  */
-$ROOT_URL = "/duanteam7-dev-den";
+$ROOT_URL = "/duanteam7t";
 $CONTENT_URL = "$ROOT_URL/content";
 $ADMIN_URL = "$ROOT_URL/admin";
 $SITE_URL = "$ROOT_URL/site";

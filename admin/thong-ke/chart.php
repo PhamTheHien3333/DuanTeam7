@@ -10,7 +10,7 @@ function drawChart() {
         ['Loại', 'Số Lượng'],
         <?php
             foreach ($items as $item) {
-                echo "['$item[ten_loai]',     $item[so_luong]],";
+                echo "['$item[name]',     $item[so_luong]],";
             }
             ?>
     ]);

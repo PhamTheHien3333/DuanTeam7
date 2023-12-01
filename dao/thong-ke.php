@@ -8,8 +8,8 @@ function thong_ke_hang_hoa()
         . " MIN(hh.price) gia_min,"
         . " MAX(hh.price) gia_max,"
         . " AVG(hh.price) gia_avg"
-        . " FROM hang_hoa hh "
-        . " JOIN loai lo ON lo.categoryId=hh.categoryIdi "
+        . " FROM products hh "
+        . " JOIN categories lo ON lo.categoryId=hh.categoryId "
         . " GROUP BY lo.categoryId, lo.name";
     return pdo_query($sql);
 }
@@ -19,8 +19,8 @@ function thong_ke_binh_luan()
         . " COUNT(*) so_luong,"
         . " MIN(bl.dateCmt) cu_nhat,"
         . " MAX(bl.dateCmt) moi_nhat"
-        . " FROM binh_luan bl "
-        . " JOIN products hh ON hh.productId=bl.productIdma_hh "
+        . " FROM comments bl "
+        . " JOIN products hh ON hh.productId=bl.productId=ma_hh "
         . " GROUP BY hh.productId, hh.name"
         . " HAVING so_luong > 0";
     return pdo_query($sql);

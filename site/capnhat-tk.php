@@ -13,17 +13,21 @@ if (exist_param("btn_edit")) {
 
     //show dữ liệu
     $items = khach_hang_select_by_id($ma_kh);
-    $VIEW_NAME = "suatk.php.php";
+    require 'suatk.php.php';
 }else if (exist_param("btn_update")) {
         
         $up_hinh = save_file("up_hinh", "$UPLOAD_URL/users/");
         $hinh = strlen($up_hinh) > 0 ? $up_hinh : $hinh;
     
-        tai_khoan_update($tai_khoan, $ho_ten, $email, $hinh, $phone, $address, $ma_kh);
+        tai_khoan_update($ho_ten, $email, $hinh, $phone, $address, $ma_kh);
         // khach_hang_update();
         //hiển thị danh sách
     
         $items = khach_hang_select_all();
-        $VIEW_NAME = "suatk.php";
+        require 'capnhattk-form.php';
+}else if (exist_param("btn_list")) {
 
-}
+             //show dữ liệu
+        $items = khach_hang_select_by_id($ma_kh);
+        require 'capnhattk-form.php';
+ }

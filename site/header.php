@@ -63,15 +63,15 @@
                         aria-haspopup="true" aria-expanded="false">                    
                         <i><img src="../img/cat-1.jpg" class="img-user" alt=""></i> 
                         <i class="fas fa-shopping-cart "></i>
-                        <span class="cart-number">3</span>                    
+                        <span class="cart-number">3</span>
                     </a>             
                     <div class="text">
                         <span class="text-dark"></span>
                         <a href="./form.php" class="d-block text-info">Đăng nhập</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <a class="dropdown-item pl-3 py-2" href="">Quản trị admin</a>
-                            <a class="dropdown-item pl-3 py-2" href="capnhattk-form.php">Cập nhật tài khoản</a>
-                            <a class="dropdown-item pl-3 py-2" href="">Đổi mật khẩu</a>
+                            <a class="dropdown-item pl-3 py-2" href="suatk.php">Cập nhật tài khoản</a>
+                            <a class="dropdown-item pl-3 py-2" href="doimk-form.php">Đổi mật khẩu</a>
                             <a class="dropdown-item pl-3 py-2" href="">Đăng xuất</a>
                             <a class="dropdown-item pl-3 py-2" href="">Đăng nhập</a>
                             <a class="dropdown-item pl-3 py-2" href="">Đăng ký</a>

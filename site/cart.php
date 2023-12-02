@@ -63,6 +63,7 @@
                     <tbody class="align-middle">
 
                         <?php
+                        
                         require '../global.php';
                         $cookie_data = $_COOKIE['cart'];
                         $cart_data = json_decode($cookie_data, true);

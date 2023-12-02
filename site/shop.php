@@ -101,7 +101,7 @@
                                     <h6 class="text-truncate mb-3"><?= $product['name']; ?></h6>
                                     <div class="d-flex justify-content-center">
                                         <h6><?= $product['price']; ?><u>đ</u></h6>
-                                        <h6 class="text-muted ml-2"><del></del></h6>
+                                        <h6 class="text-muted ml-2"><del><?= $product['sale']; ?>.000<u>đ</u></del></h6>
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-between bg-light border">

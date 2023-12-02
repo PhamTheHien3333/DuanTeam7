@@ -8,7 +8,7 @@ function khach_hang_insert_admin($tai_khoan, $mat_khau, $ho_ten, $email, $hinh, 
 function khach_hang_insert($username, $mat_khau, $ho_ten, $email, $status, $role)
 {
   try {
-    $sql = "INSERT INTO users(username, password, fullName, email, status, role, address) VALUES (?, ?, ?, ?, ?, ?,'')";
+    $sql = "INSERT INTO users(username, password, fullName, email, status, role, phone, img, address) VALUES (?, ?, ?, ?, ?, ?,'null','null','null')";
     pdo_execute($sql, $username, $mat_khau, $ho_ten, $email, $status, $role);
   } catch (Exception $exc) {
     $MESSAGE = "Đăng ký thành viên thất bại! Lỗi: " . $exc->getMessage();

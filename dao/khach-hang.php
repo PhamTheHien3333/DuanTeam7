@@ -41,6 +41,8 @@ function khach_hang_select_by_id($ma_kh)
     $sql = "SELECT * FROM users WHERE userId=?";
     return pdo_query_one($sql, $ma_kh);
 }
+
+
 function khach_hang_select_by_username($username)
 {
     $sql = "SELECT * FROM users WHERE username=?";
@@ -64,3 +66,9 @@ function khach_hang_change_password($ma_kh, $mat_khau_moi)
     $sql = "UPDATE users SET password=? WHERE userId=?";
     pdo_execute($sql, $mat_khau_moi, $ma_kh);
 }
+
+//
+
+
+
+

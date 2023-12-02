@@ -49,10 +49,10 @@
                     <li><a href="contact.php" class="link">Liên Hệ</a></li>
                 </ul>
             </div>
-            <div class="nav-button">
+            <!-- <div class="nav-button">
                 <button class="btn white-btn" id="loginBtn" onclick="login()">Đăng nhập</button>
                 <button class="btn" id="registerBtn" onclick="register()">Đăng ký</button>
-            </div>
+            </div> -->
             <div class="nav-menu-btn">
                 <i class="bx bx-menu" onclick="myMenuFunction()"></i>
             </div>
@@ -63,79 +63,30 @@
 
             <!------------------- login form -------------------------->
 
-            <div class="login-container" id="login">
+            <div class="login-container" id="">
                 <div class="top">
-                    <span>Bạn chưa có tài khoản? <a href="#" onclick="register()">Đăng ký</a></span>
-                    <header>Đăng nhập</header>
+                    <span>Bạn chưa có tài khoản? <a href="form.php" >Đăng ký</a></span>
+                    <header>Quên thông tin tài khoản</header>
                 </div>
-                <form action="../site/dang-nhap.php" method="POST" id="form_login" onsubmit="return validateLoginForm()">
+                <form action="../site/xl-quen-pass.php" method="POST" id="form_quen_mk" >
                     <div class="input-box">
-                        <input type="text" class="input-field" name="username" placeholder="Tên đăng nhập" oninput="clearError('login-username-error')">
+                        <input type="text" class="input-field" name="username" id="username" placeholder="Tên đăng nhập" >
                         <i class="bx bx-user"></i>
                     </div>
                     <span id="login-username-error" class="text-danger error-message"></span>
                     <div class="input-box">
-                        <input type="password" class="input-field" name="password" placeholder="Mật khẩu" oninput="clearError('login-password-error')">
+                        <input type="text" class="input-field" name="email" id="email" placeholder="Email" >
                         <i class="bx bx-lock-alt"></i>
                     </div>
+                    <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
                     <span id="login-password-error" class="text-danger error-message"></span>
                     <span id="register-fullname-error" class="error-message"></span>
-                    <?php if (!empty($MESSAGE)) : ?>
-                        <div class="text-danger" style="display: block; size: 30px; font-weight: bold; padding-left: 15px; padding-bottom: 2px; "><?php echo $MESSAGE; ?></div>
-                    <?php endif; ?>
                     <div class="input-box">
-                        <input type="submit" name="btn_login" class="submit" value="Đăng nhập">
-                    </div>
-                    <div class="two-col">
-                        <div class="one">
-                            <input type="checkbox" id="login-check">
-                            <label for="login-check" name="ghi_nho" checked>Ghi nhớ mật khẩu</label>
-                        </div>
-                        <div class="two">
-                            <label><a href="../site/quen_pass.php">Quên mật khẩu?</a></label>
-                        </div>
+                        <input type="submit" name="btn_forgot_pass" class="submit" value="Lấy mật khẩu">
                     </div>
                 </form>
             </div>
 
-            <!------------------- registration form -------------------------->
-
-            <div class="register-container" id="register">
-                <div class="top">
-                    <span>Bạn có tài khoản? <a href="#" onclick="login()">Đăng nhập</a></span>
-                    <header>Đăng ký</header>
-                </div>
-                <form action="../site/dang-ky.php" method="post" enctype="multipart/form-data" id="form_dang_ki" onsubmit="return validateRegisterForm()">
-                    <div class="two-forms">
-                        <div class="input-box">
-                            <input type="text" class="input-field" name="username" placeholder="Tên đăng nhập" oninput="clearError('register-username-error')">
-                            <i class="bx bx-user"></i>
-                        </div>
-                        <div class="input-box">
-                            <input type="text" class="input-field" name="fullName" placeholder="Họ và tên" oninput="clearError('register-fullname-error')">
-                            <i class="bx bx-user"></i>
-                        </div>
-                    </div>
-                    <span id="register-username-error" class="text-danger error-message"></span>
-                    <span id="register-fullname-error" class="text-danger error-message"></span>
-                    <div class="input-box">
-                        <input type="email" class="input-field" name="email" placeholder="Email" oninput="clearError('register-email-error')">
-                        <i class="bx bx-envelope"></i>
-                    </div>
-                    <span id="register-email-error" class="text-danger error-message"></span>
-                    <div class="input-box">
-                        <input type="password" class="input-field" name="password" placeholder="Mật khẩu" oninput="clearError('register-password-error')">
-                        <i class="bx bx-lock-alt"></i>
-                    </div>
-                    <span id="register-password-error" class="text-danger error-message"></span>
-                    <div class="input-box">
-                        <input type="submit" name="btn_register" class="submit" value="Đăng ký">
-                    </div>
-                    <input type="hidden" name="id">
-                    <input type="hidden" name="status" value="1">
-                    <input type="hidden" name="role" value="0">
-                </form>
-            </div>
         </div>
     </div>
 

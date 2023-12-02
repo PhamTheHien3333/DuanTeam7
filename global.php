@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 /**
  * Định nghĩa các url cần thiết sử dụng trong website
  */

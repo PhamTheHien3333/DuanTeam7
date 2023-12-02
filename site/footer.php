@@ -2,7 +2,7 @@
     .footer {
         background-color: magenta;
     }
-</styl
+</style>
 <!-- Footer Start -->
 
 <div class="footer container-fluid bg-secondary text-light mt-5 pt-5">

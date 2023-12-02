@@ -13,7 +13,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -68,21 +68,19 @@
             <h2 class="section-title px-5"><span class="px-2">San Pham</span></h2>
         </div>
         <div class="row px-xl-5 pb-3">
-            <?php
-                                require '../dao/hang-hoa.php';
-                                $products = hang_hoa_select_all();
-                                foreach ($products as $product) {
+                                <?php
+                                foreach ($items as $item) {
                                 ?>
 
                                     <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                                         <div class="card product-item border-0 mb-4">
                                             <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <img class="img-fluid w-100" style="width: 440px; height: 440px;" src="../uploads/products/<?= $product['img']; ?>" alt="">
+                                                <img class="img-fluid w-100" style="width: 440px; height: 440px;" src="../uploads/products/<?= $item['img']; ?>" alt="">
                                             </div>
                                             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                                <h6 class="text-truncate mb-3"><?= $product['name']; ?></h6>
+                                                <h6 class="text-truncate mb-3"><?= $item['name']; ?></h6>
                                                 <div class="d-flex justify-content-center">
-                                                    <h6><?= $product['price']; ?></h6>
+                                                    <h6><?= $item['price']; ?></h6>
                                                     <h6 class="text-muted ml-2"><del></del></h6>
                                                 </div>
                                             </div>
@@ -102,7 +100,7 @@
 <?php
     include("footer.php");
 ?>
-    
+
 
 
     <!-- Back to Top -->

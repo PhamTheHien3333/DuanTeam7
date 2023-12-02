@@ -75,10 +75,8 @@ function hang_hoa_select_by_loai($ma_loai)
 }
 function hang_hoa_select_keyword($keyword)
 {
-    $sql = "SELECT * FROM products hh "
-        . " JOIN loai lo ON lo.categoryId=hh.categoryId "
-        . " WHERE ten_hh LIKE ? OR ten_loai LIKE ?";
-    return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
+    $sql = "SELECT * FROM products hh WHERE name LIKE '%".$keyword."%'";
+    return pdo_query($sql);
 }
 function hang_hoa_select_page($order, $limit)
 {

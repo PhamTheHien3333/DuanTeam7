@@ -46,13 +46,13 @@
           </a>
       </div>
       <div class="col-lg-6 col-6 text-left">
-          <form action="">
+          <form action="liet-ke.php" method="POST">
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Tìm kiếm">
+                  <input type="text" class="form-control" name="kyw" placeholder="Tìm kiếm">
                   <div class="input-group-append">
-                      <span class="input-group-text bg-transparent text-primary">
+                      <button class="btn bg-primary" type="submit" name="timkiem">
                           <i class="fa fa-search"></i>
-                      </span>
+                      </button>
                   </div>
               </div>
           </form>
@@ -114,7 +114,7 @@
                           <a href="index.php" class="nav-item nav-link active">Trang chủ</a>
                           <a href="shop.php" class="nav-item nav-link">Sản phẩm</a>
                           <a href="gioithieu.php" class="nav-item nav-link">Giới thiệu</a>
-                          <a href="#" class="nav-item nav-link">Bài viết</a>
+                          <a href="baiviet.php" class="nav-item nav-link">Bài viết</a>
                           <a href="contact.php" class="nav-item nav-link">Liên hệ</a>
 
                       </div>

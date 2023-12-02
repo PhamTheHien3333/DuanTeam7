@@ -2,18 +2,16 @@
     .footer {
         background-color: magenta;
     }
-</style>
+</styl
 <!-- Footer Start -->
 
 <div class="footer container-fluid bg-secondary text-light mt-5 pt-5">
     <div class="row px-xl-5 pt-5">
         <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-            <a href="./index.php" class="text-decoration-none">
-            <img class="logo" style="width: 40px; height: 40px;" src="../img/logo.jpg" alt="">
-            </a>
-            <p class="text-dark">Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
-            <p class="mb-2 text-dark"><i class="fa fa-map-marker-alt text-dark mr-3"></i>123 Street, New York, USA</p>
-            <p class="mb-2 text-dark"><i class="fa fa-envelope text-dark mr-3"></i>info@example.com</p>
+            <h5 class="font-weight-bold text-dark mb-4">Giới thiệu</h5>
+            <p class="text-dark">CHD là một shop bán giày chuyên bán các loại giày thể thao thời trang chất lượng từ nhiều thương hiệu nổi tiếng.</p>
+            <p class="mb-2 text-dark"><i class="fa fa-map-marker-alt text-dark mr-3"></i>23 đường Trương Vĩnh Nguyên, Cần Thơ, USA</p>
+            <p class="mb-2 text-dark"><i class="fa fa-envelope text-dark mr-3"></i>chdshop@gmail.com</p>
             <p class="mb-0 text-dark"><i class="fa fa-phone-alt text-dark mr-3"></i>+012 345 67890</p>
         </div>
         <div class="col-lg-8 col-md-12">

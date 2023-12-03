@@ -32,7 +32,7 @@
 <div class="container-fluid pt-5">
         <div class="row px-xl-5">
             <div class="col-lg-8 table-responsive mb-5">
-            <form action="capnhat-tk.php" method="POST">
+            <form action="capnhat-tk.php?userId" method="POST">
                 <table class="table table-bordered text-center mb-0">
                     <thead class="bg-secondary text-dark">
                         <tr>
@@ -48,13 +48,14 @@
                     </thead>
                     <tbody>
                         <?php
-                        require '../global.php';
                         require '../dao/khach-hang.php';
 
-                            foreach($items as $item){
+                            $id = $_GET['userId'];
+                            $users = getId($id);
+                            foreach($users as $item):
                             extract($item);
                             $suakh = "capnhat-tk.php?btn_edit&userId=" . $item['userId'];
-                            $img_path = $UPLOAD_URL . '/users/' . $item['img'];
+                            $img_path = "../uploads/users/".$item['img'];
                             if (is_file($img_path)) {
                                 $img = "<img src='$img_path' height='50' width='50' class='rounded-circle object-fit-cover'>";
                             } else {
@@ -63,7 +64,7 @@
 
                         ?>
                         <tr>
-                            <td><?= $item['userId'] ?></td>
+                            <th><?= $item['userId'] ?></th>
                             <td><?= $item['username'] ?></td>
                             <td><?= $item['fullName'] ?></td>
                             <td><?= $item['email'] ?></td>
@@ -75,7 +76,7 @@
                                         class="fas fa-pen"></i></a>
                             </td>
                         </tr>
-                       <?php } ?>
+                       <?php endforeach; ?>
                     </tbody>
 
                 </table>

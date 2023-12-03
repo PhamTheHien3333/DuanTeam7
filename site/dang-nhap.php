@@ -22,20 +22,20 @@ if (exist_param("btn_login")) {
                     delete_cookie("username");
                     delete_cookie("password");
                 }
-                $_SESSION["username"] = $user;
+                $_SESSION["username"] = $username;
+                $_SESSION["userId"] = $user["userId"];
                 header('Location: ./index.php ');
             }
         } else {
             $MESSAGE = "Sai mật khẩu!";
             echo "<script>
-        alert('Không thể đăng nhập vì . " . $MESSAGE . "'); 
+        alert('Không thể đăng nhập vì . " . $MESSAGE . "');
    </script>";
         }
     } else {
         $MESSAGE = "Sai tên đăng nhập!";
         echo "<script>
-        alert('Không thể đăng nhập vì . " . $MESSAGE . "'); 
+        alert('Không thể đăng nhập vì . " . $MESSAGE . "');
    </script>";
     }
 }
-

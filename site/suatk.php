@@ -31,36 +31,46 @@
         <div class="col-lg-7">
             <div class="mb-4">
                 <h4 class="font-weight-semi-bold mb-4 text-center">Thông tin</h4>
-                <form action="capnhattk?btn_update" method="POST" enctype="multipart/form-data" id="admin_update_kh">
+                <form action="capnhat-tk.php?btn_update" method="POST" enctype="multipart/form-data" id="admin_update_kh">
                 <div class="d-flex">
                     <div class="row col-md-6">
                         <div class="col-md-12 form-group">
+                             <label class="font-weight-bold text-dark" for="userId">ID:</label>
+                             <input class="form-control custom-input" name="userId" id="userId" type="number"
+                                 placeholder="Vui lòng nhập mã tài khoản" value="<?= $userId ?>" disabled>
+                        </div>
+                        <div class="col-md-12 form-group">
                             <label class="font-weight-bold text-dark" for="name">Họ và tên:</label>
                             <input class="form-control custom-input" name="fullName" id="name" type="text"
-                                placeholder="Vui lòng nhập họ và tên">
+                                placeholder="Vui lòng nhập họ và tên" value="<?= $fullName ?>">
                         </div>
                         <div class="col-md-12 form-group">
                             <label class="font-weight-bold text-dark" for="email">Email:</label>
                             <input class="form-control custom-input" name="email" id="email" type="email"
-                                placeholder="Vui lòng nhập email ">
+                                placeholder="Vui lòng nhập email " value="<?= $email ?>">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <label class="font-weight-bold text-dark" for="up_hinh">Hình:</label>
+                            <input class="form-control custom-input" name="up_hinh" id="up_hinh" type="file"
+                                placeholder="" value="<?= $img ?>">
                         </div>
                         <div class="col-md-12 form-group">
                             <label class="font-weight-bold text-dark" for="phone">Số điện thoại:</label>
                             <input class="form-control custom-input" name="phone" id="phone" type="phone"
-                                placeholder="Vui lòng nhập số điện thoại của bạn">
+                                placeholder="Vui lòng nhập số điện thoại của bạn" value="<?= $phone ?>">
                         </div>
                         <div class="col-md-12 form-group">
                             <label class="font-weight-bold text-dark" for="address">Địa chỉ:</label>
                             <br>
                             <!-- <input class="form-control" type="text" placeholder="Vui lòng nhập địa chỉ hiện tại của bạn"> -->
-                            <textarea class="custom-textarea" name="address" id="address" cols="100"
-                                rows="8"></textarea>
+                            <input class="form-control custom-input" name="address" id="address" type="text"
+                                  placeholder="" value="<?= $address ?>">
                         </div>
                     </div>
                 </div>
                 <div class="mb-3 text-center mt-3">
-                        <input type="hidden" name="userId" value="<?= $ma_kh ?>">
-                        <input type="submit" name="btn_update" value="Cập nhật" class="btn btn-primary mr-3">\
+                        <input type="hidden" name="userId" value="<?= $userId ?>">
+                        <input type="submit" name="btn_update" value="Cập nhật" class="btn btn-primary mr-3">
                         <input type="submit" name="btn_list" value="Chi tiết" class="btn btn-primary mr-3">
                     </div>
                 </form>

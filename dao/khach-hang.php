@@ -15,6 +15,11 @@ function khach_hang_insert($username, $mat_khau, $ho_ten, $email, $status, $role
     echo "<script>alert('$MESSAGE');</script>";
   }
 }
+function getId($ma_kh)
+{
+    $sql = "SELECT * FROM users WHERE userId=?";
+    return pdo_query($sql, $ma_kh);
+}
 function khach_hang_update($tai_khoan, $mat_khau, $ho_ten, $email, $hinh, $phone, $address, $kich_hoat, $vai_tro, $ma_kh)
 {
     $sql = "UPDATE users SET username=?,password=?,fullName=?,email=?,img=?,phone=?,address=?,status=?,role=? WHERE userId=?";

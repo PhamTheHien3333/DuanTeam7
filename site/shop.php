@@ -58,34 +58,13 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="dropdown ml-4">
-                                <button class="btn border dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                            Loại
-                                        </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
-                                    <!-- <a class="dropdown-item" href="#">Adidas</a>
-                                    <a class="dropdown-item" href="#">Nike</a>
-                                    <a class="dropdown-item" href="#">Converse</a> -->
-                                    <?php
-                require '../global.php';
-                $conn = pdo_get_connection();
-                $sql = "SELECT * FROM categories";
-                $stmt = $conn->prepare($sql);
-                $stmt->execute();
-                while ($row = $stmt->fetch()) {
-                    echo "<a href='shop.php?category=" . $row['categoryId'] . "' class='dropdown-item'>" . $row['name'] . "</a>";
-                }
-                $conn = null;
-                ?>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <?php
 
                     require '../dao/hang-hoa.php';
                     $products = hang_hoa_select_all();
+
                     foreach ($products as $product) {
                     ?>
 
@@ -99,13 +78,16 @@
                                 <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                     <h6 class="text-truncate mb-3"><?= $product['name']; ?></h6>
                                     <div class="d-flex justify-content-center">
-                                        <h6><?= $product['price']; ?><u>đ</u></h6>
-                                        <h6 class="text-muted ml-2"><del><?= $product['sale']; ?>.000<u>đ</u></del></h6>
+                                        <h6 class="text-danger"><?= number_format($product['sale']) ?>đ</h6>
+                                        <h6 class="text-muted ml-2"><del><?= number_format($product['price']) ?>đ</del></h6>
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-between bg-light border">
                                     <a href="" class="btn btn-sm text-dark nav-item nav-link  p-0"><i class="fas fa-eye text-primary mr-1"></i>Lượt xem</a>
-                                    <a href="./checkout.php" class="btn btn-sm text-dark nav-item nav-link p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
+                                    <form action="cart-xuly.php" method="post">
+                                    <input type="hidden" name="productId" id="" value="<?= $product['productId'] ?>">
+                                    <button type="submit" name="them" class="btn btn-sm text-dark nav-item nav-link p-0"><i class="fa fa-shopping-cart mr-1"></i>Thêm vào giỏ hàng</button>
+                                </form>
                                 </div>
                             </div>
                             </a>

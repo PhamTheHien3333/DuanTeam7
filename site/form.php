@@ -38,7 +38,10 @@
         <nav class="nav">
             <div class="nav-logo">
                 <a href="./index.php" class="text-decoration-none">
-                    <img class="logo" src="../img/logo.jpg" alt="">
+                    <!-- <img class="logo" src="" alt=""> -->
+                    <!-- <a href="" class="text-decoration-none d-block d-lg-none">
+                      <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                  </a> -->
                 </a>
             </div>
             <div class="nav-menu" id="navMenu">

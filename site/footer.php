@@ -21,8 +21,8 @@
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-dark mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Trang chủ</a>
                         <a class="text-dark mb-2" href="gioithieu.php"><i class="fa fa-angle-right mr-2"></i>Giới thiệu</a>
+                        <a class="text-dark mb-2" href="shop.php"><i class="fa fa-angle-right mr-2"></i>Sản phẩm của chúng tôi</a>
                         <a class="text-dark mb-2" href="baiviet.php"><i class="fa fa-angle-right mr-2"></i>Bài viết</a>
-                        <a class="text-dark mb-2" href="checkout.php"><i class="fa fa-angle-right mr-2"></i>Thủ tục thanh toán</a>
                         <a class="text-dark" href="contact.php"><i class="fa fa-angle-right mr-2"></i>Liên hệ với chúng tôi</a>
                     </div>
                 </div>

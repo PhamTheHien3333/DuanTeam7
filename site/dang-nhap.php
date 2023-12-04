@@ -29,13 +29,14 @@ if (exist_param("btn_login")) {
         } else {
             $MESSAGE = "Sai mật khẩu!";
             echo "<script>
-        alert('Không thể đăng nhập vì . " . $MESSAGE . "');
+        alert('Không thể đăng nhập vì . " . $MESSAGE . "'); 
    </script>";
         }
     } else {
         $MESSAGE = "Sai tên đăng nhập!";
         echo "<script>
-        alert('Không thể đăng nhập vì . " . $MESSAGE . "');
+        alert('Không thể đăng nhập vì . " . $MESSAGE . "'); 
    </script>";
     }
 }
+

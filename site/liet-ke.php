@@ -18,7 +18,7 @@ if (exist_param("ma_loai")) {
     $title_site = "Sản phẩm đặc biệt";
     $items = hang_hoa_select_dac_biet();
 } else if (exist_param("timkiem")) {
-    $kyw = $_POST['kyw'];
+    $kyw = $_GET['kyw'];
     if ($kyw == '') {
         $title_site = "Tất cả sản phẩm";
     } else {

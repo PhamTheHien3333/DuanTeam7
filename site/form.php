@@ -80,9 +80,6 @@
                     </div>
                     <span id="login-password-error" class="text-danger error-message"></span>
                     <span id="register-fullname-error" class="error-message"></span>
-                    <?php if (!empty($MESSAGE)) : ?>
-                        <div class="text-danger" style="display: block; size: 30px; font-weight: bold; padding-left: 15px; padding-bottom: 2px; "><?php echo $MESSAGE; ?></div>
-                    <?php endif; ?>
                     <div class="input-box">
                         <input type="submit" name="btn_login" class="submit" value="Đăng nhập">
                     </div>

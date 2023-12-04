@@ -13,7 +13,8 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -27,7 +28,7 @@
 </head>
 
 <body>
-<?php
+    <?php
     include("header.php");
 ?>
     <!-- Featured Start -->
@@ -68,35 +69,45 @@
             <h2 class="section-title px-5"><span class="px-2">San Pham</span></h2>
         </div>
         <div class="row px-xl-5 pb-3">
-                                <?php
+            <?php
                                 foreach ($items as $item) {
                                 ?>
-                                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                                        <div class="card product-item border-0 mb-4">
-                                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <img class="img-fluid w-100" style="width: 440px; height: 440px;" src="../uploads/products/<?= $item['img']; ?>" alt="">
-                                            </div>
-                                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                                <h6 class="text-truncate mb-3"><?= $item['name']; ?></h6>
-                                                <div class="d-flex justify-content-center">
-                                                    <h6><?= $item['price']; ?></h6>
-                                                    <h6 class="text-muted ml-2"><del></del></h6>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                                <a href="" class="btn btn-sm text-dark nav-item nav-link  p-0"><i class="fas fa-eye text-primary mr-1"></i>Lượt xem</a>
-                                                <a href="./checkout.php" class="btn btn-sm text-dark nav-item nav-link p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php } ?>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+
+                <a href="./detail.php?productId=<?= $item['productId'] ?> ">
+                    <div class="card product-item border-0 mb-4">
+                        <div
+                            class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="img-fluid w-100" src="../uploads/products/<?= $item['img']; ?>" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="text-truncate mb-3"><?= $item['name']; ?></h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="text-danger"><?= number_format($item['sale']) ?>đ</h6>
+                                <h6 class="text-muted ml-2"><del><?= number_format($item['price']) ?>đ</del></h6>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="" class="btn btn-sm text-dark nav-item nav-link  p-0"><i
+                                    class="fas fa-eye text-primary mr-1"></i>Lượt xem</a>
+                            <form action="cart-xuly.php" method="post">
+                                <input type="hidden" name="productId" id="" value="<?= $item['productId'] ?>">
+                                <button type="submit" name="them" class="btn btn-sm text-dark nav-item nav-link p-0"><i
+                                        class="fa fa-shopping-cart mr-1"></i>Thêm vào giỏ hàng</button>
+                            </form>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <?php } ?>
 
         </div>
     </div>
     <!-- Products End -->
 
 
-<?php
+    <?php
     include("footer.php");
 ?>
 

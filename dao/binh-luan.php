@@ -55,8 +55,17 @@ function binh_luan_select_by_hang_hoa($ma_hh, $limit = 10)
     }
     $begin = ($_SESSION['page'] - 1) * $limit;
     $_SESSION['total_page'] = ceil($_SESSION['total_bl'] / $limit);
-    $sql = "SELECT b.*, h.name, k.fullName, k.img FROM binh_luan b 
+    $sql = "SELECT b.*, h.name, k.fullName, k.img FROM comments b
     JOIN products h ON h.productId  = b.productId 
-    JOIN users k ON k.userId =b.userId WHERE b.productId=? ORDER BY ma_bl DESC LIMIT $begin,$limit";
+    JOIN users k ON k.userId =b.userId WHERE b.productId=? ORDER BY cmtId DESC LIMIT $begin,$limit";
     return pdo_query($sql, $ma_hh);
+}
+function getComments($id)
+{
+    $query = "SELECT u.img, u.username, c.content, c.dateCmt
+    FROM comments c
+    INNER JOIN users u ON c.userId = u.userId
+    INNER JOIN products sp ON c.productId = sp.productId
+     WHERE c.productId = $id"; // Câu truy vấn lấy các bình luận
+     return pdo_query_one($query, $id);
 }

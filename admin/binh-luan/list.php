@@ -22,12 +22,12 @@
 
                     ?>
                     <tr>
-                        <td><?= $ten_hh ?></td>
+                        <td><?= $name ?></td>
                         <td><?= $so_luong ?></td>
                         <td><?= $cu_nhat ?></td>
                         <td><?= $moi_nhat ?></td>
                         <td class="text-end">
-                            <a href="../binh-luan/index.php?ma_hh=<?= $ma_hh ?>"
+                            <a href="../binh-luan/index.php?ma_hh=<?= $productId ?>"
                                 class="btn btn-outline-info btn-rounded">Chi tiết <i
                                     class="fas fa-info-circle"></i></i></a>
                         </td>

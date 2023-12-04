@@ -8,7 +8,7 @@
             <form action="?btn_delete_all" method="post" class="table-responsive">
 
                 <button type="submit" class="btn btn-danger mb-1" id="deleteAll" onclick="return checkDelete()">
-                    Xóa mục đã chọn</button> <i class="ml-5">hàng hóa: <b><?= $items[0]['ten_hh'] ?></b></i>
+                    Xóa mục đã chọn</button> <i class="ml-5">hàng hóa: <b><?= $items[0]['name'] ?></b></i>
                 <table width="100%" class="table table-hover table-bordered text-center">
                     <thead class="thead-dark">
                         <tr>
@@ -22,19 +22,19 @@
                     </thead>
                     <tbody>
                         <?php
-
+                        $username = $_SESSION['username'];
                         foreach ($items as $item) {
                             extract($item);
 
                         ?>
                         <tr>
-                            <td><input type="checkbox" name="ma_bl[]" value="<?= $ma_bl ?>"></td>
+                            <td><input type="checkbox" name="ma_bl[]" value="<?= $cmtId ?>"></td>
                             <td><?= $rating ?> sao</td>
-                            <td><?= $noi_dung ?></td>
-                            <td><?= $ngay_bl ?></td>
-                            <td><?= $ma_kh ?></td>
+                            <td><?= $content ?></td>
+                            <td><?= $dateCmt ?></td>
+                            <td><?= $username ?></td>
                             <td class="text-end">
-                                <a href="index.php?btn_delete&ma_bl=<?= $ma_bl ?>&ma_hh=<?= $ma_hh ?>"
+                                <a href="index.php?btn_delete&ma_bl=<?= $cmtId ?>&ma_hh=<?= $productId ?>"
                                     class="btn btn-outline-danger btn-rounded" onclick="return checkDelete()"><i
                                         class="fas fa-trash"></i></a>
                             </td>
@@ -46,7 +46,7 @@
                     </tbody>
 
                 </table>
-                <input type="hidden" name="ma_hh" value="<?= $ma_hh ?>">
+                <input type="hidden" name="ma_hh" value="<?= $productId ?>">
                 <div class="mt-3" width="100%">
                     <ul class="pagination justify-content-center">
                         <?php for ($i = 1; $i <= $_SESSION['total_page']; $i++) { ?>

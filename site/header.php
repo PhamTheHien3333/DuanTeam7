@@ -48,7 +48,7 @@
           </a>
       </div>
       <div class="col-lg-6 col-6 text-left">
-          <form action="liet-ke.php" method="POST">
+          <form action="liet-ke.php" method="GET">
               <div class="input-group">
                   <input type="text" class="form-control" name="kyw" placeholder="Tìm kiếm">
                   <div class="input-group-append">
@@ -62,7 +62,6 @@
       <div class="col-lg-3 col-6 text-right">
           <?php
          session_start();
-
                         if (isset($_SESSION['username'])) :
                            // Nếu đã đăng nhập, hiển thị tên người dùng và menu
                            $user = $_SESSION['username'];
@@ -81,7 +80,7 @@
                   <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
                       <a class="dropdown-item pl-3 py-2" href="capnhat.php?userId=<?=$id?>"><?= $user ?></a>
                       <a class="dropdown-item pl-3 py-2" href="doimk-form.php">Đổi mật khẩu</a>
-                      <a class="dropdown-item pl-3 py-2" href="">Đăng xuất</a>
+                      <a class="dropdown-item pl-3 py-2" href="./out.php">Đăng xuất</a>
 
                   </div>
               </div>

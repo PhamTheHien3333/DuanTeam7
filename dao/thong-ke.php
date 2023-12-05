@@ -24,3 +24,15 @@ function thong_ke_binh_luan()
         . " HAVING so_luong > 0";
     return pdo_query($sql);
 }
+function thong_ke_don_hang()
+{
+    $sql = "SELECT kh.userId, kh.username,"
+        . " COUNT(*) so_luong,"
+        . " MIN(b.oderTime) cu_nhat,"
+        . " MAX(b.oderTime) moi_nhat"
+        . " FROM bill b "
+        . " JOIN users kh ON kh.userId=b.userId "
+        . " GROUP BY kh.userId, kh.username"
+        . " HAVING so_luong > 0";
+    return pdo_query($sql);
+}

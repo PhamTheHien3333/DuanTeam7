@@ -73,31 +73,30 @@ if (is_file($img_path)) {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group"></div>
-                            <label>Trạng thái?</label>
+                        <div class="form-group col-sm-6">
+                            <label for="status" class="form-label">Trạng thái?</label>
                             <div class="form-control">
-                                <label class="radio-inline  mr-3">
-                                    <input type="radio" value="0" name="status"
-                                        <?= !$items['status'] ? 'checked' : '' ?>>Chưa kích
-                                    hoạt
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" value="1" name="status"
-                                        <?= $items['status'] ? 'checked' : '' ?>>Kích hoạt
-                                </label>
+                                <div class="radio-option">
+                                    <input type="radio" id="inactive" value="0" name="status" <?= !$items['status'] ? 'checked' : '' ?>>
+                                    <label for="inactive" class="radio-label">Chưa kích hoạt</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="active" value="1" name="status" <?= $items['status'] ? 'checked' : '' ?>>
+                                    <label for="active" class="radio-label">Kích hoạt</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group ">
-                            <label>Vai trò?</label>
+                        <div class="form-group col-sm-6">
+                            <label for="role" class="form-label">Vai trò?</label>
                             <div class="form-control">
-                                <label class="radio-inline mr-3">
-                                    <input type="radio" value="0" name="role" <?= !$items['role'] ? 'checked' : '' ?>>Khách
-                                    hàng
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" value="1" name="role" <?= isset($items['role']) && $items['role'] ? 'checked' : '' ?>>Nhân
-                                    viên
-                                </label>
+                                <div class="radio-option">
+                                    <input type="radio" id="customer" value="0" name="role" <?= !$items['role'] ? 'checked' : '' ?>>
+                                    <label for="customer" class="radio-label">Khách hàng</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="employee" value="1" name="role" <?= isset($items['role']) && $items['role'] ? 'checked' : '' ?>>
+                                    <label for="employee" class="radio-label">Nhân viên</label>
+                                </div>
                             </div>
                         </div>
                     </div>

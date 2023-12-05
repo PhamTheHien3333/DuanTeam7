@@ -31,7 +31,7 @@
                             extract($item);
                             $suakh = "index.php?btn_edit&userId=" . $item['userId'];
                             $xoakh = "index.php?btn_delete&userId=" . $item['userId'];
-                            $img_path = $UPLOAD_URL . '/users/' . $item['img'];
+                            $img_path = '../../uploads/users/'. $item['img'];
                             if (is_file($img_path)) {
                                 $img = "<img src='$img_path' height='50' width='50' class='rounded-circle object-fit-cover'>";
                             } else {

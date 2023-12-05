@@ -5,11 +5,11 @@ function khach_hang_insert_admin($tai_khoan, $mat_khau, $ho_ten, $email, $hinh, 
     $sql = "INSERT INTO users(username,password,fullName,email,img,phone,address,status,role) VALUES(?,?,?,?,?,?,?,?,?)";
     pdo_execute($sql, $tai_khoan, $mat_khau, $ho_ten, $email, $hinh, $phone, $address, $status, $role);
 }
-function khach_hang_insert($username, $mat_khau, $ho_ten, $email, $status, $role)
+function khach_hang_insert($username, $mat_khau, $ho_ten, $email, $hinh, $address, $phone, $status, $role)
 {
   try {
-    $sql = "INSERT INTO users(username, password, fullName, email, status, role, address) VALUES (?, ?, ?, ?, ?, ?,'')";
-    pdo_execute($sql, $username, $mat_khau, $ho_ten, $email, $status, $role);
+    $sql = "INSERT INTO users(username, password, fullName, email, img, address, phone, status, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    pdo_execute($sql, $username, $mat_khau, $ho_ten, $email, $hinh, $address, $phone, $status, $role);
   } catch (Exception $exc) {
     $MESSAGE = "Đăng ký thành viên thất bại! Lỗi: " . $exc->getMessage();
     echo "<script>alert('$MESSAGE');</script>";
@@ -26,11 +26,6 @@ function khach_hang_update($tai_khoan, $mat_khau, $ho_ten, $email, $hinh, $phone
     pdo_execute($sql,$tai_khoan, $mat_khau, $ho_ten, $email, $hinh, $phone, $address,$kich_hoat, $vai_tro, $ma_kh);
 }
 
-function tai_khoan_update($ho_ten, $email, $hinh, $phone, $address, $ma_kh)
-{
-    $sql = "UPDATE users SET fullName=?,email=?,img=?,phone=?,address=? WHERE userId=?";
-    pdo_execute($sql, $ho_ten, $email, $hinh, $phone, $address, $ma_kh);
-}
 function khach_hang_delete($ma_kh)
 {
     $sql = "DELETE FROM users WHERE userId=?";

@@ -15,7 +15,7 @@ if (exist_param("btn_list")) {
     
     $tai_khoan = $_POST['username'];
     $ho_ten = $_POST['fullname'];
-    $mat_khau = $_POST['password'];
+    $mat_khau = md5($_POST['password']);
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
@@ -23,9 +23,9 @@ if (exist_param("btn_list")) {
     $vai_tro = $_POST['role'];
 
     // Upload file lên host
-    $hinh = save_file('img', "$UPLOAD_URL/users/");
+    $hinh = save_file('img', "../../uploads/users/");
     //insert vào db
-    khach_hang_insert($tai_khoan, $mat_khau, $ho_ten, $email, $hinh, $phone, $address, $kich_hoat, $vai_tro);
+    khach_hang_insert($username, $mat_khau, $ho_ten, $email, $hinh, $address, $phone, $status, $role);
 
     //show dữ liệu
     $items = khach_hang_select_all();
@@ -61,7 +61,7 @@ if (exist_param("btn_list")) {
     $ma_kh = $_POST['userId'];
     $tai_khoan = $_POST['username'];
     $ho_ten = $_POST['fullname'];
-    $mat_khau = $_POST['password'];
+    $mat_khau = md5($_POST['password']);
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
@@ -69,7 +69,7 @@ if (exist_param("btn_list")) {
     $vai_tro = $_POST['role'];
 
 
-    $up_hinh = save_file("up_hinh", "$UPLOAD_URL/users/");
+    $up_hinh = save_file("up_hinh", "../../uploads/users/");
     $hinh = strlen($up_hinh) > 0 ? $up_hinh : $hinh;
 
     khach_hang_update($tai_khoan, $mat_khau, $ho_ten, $email, $hinh, $phone, $address, $kich_hoat, $vai_tro, $ma_kh);

@@ -19,18 +19,10 @@ if (exist_param("ma_loai")) {
     $items = hang_hoa_select_dac_biet();
 } else if (exist_param("timkiem")) {
     $kyw = $_GET['kyw'];
-    if ($kyw == '') {
-        $title_site = "Tất cả sản phẩm";
-    } else {
-        $title_site = "Các sản phẩm có chứa từ khóa :'$kyw'";
-    }
-    $items = hang_hoa_select_keyword($kyw);
-    if (count($items) == 0) {
-        $title_site = "Không sản phẩm nào chứa từ khóa :'$kyw'";
-    }
+
 } else {
-    $title_site = "Tất cả sản phẩm";
-    $items = hang_hoa_select_page('so_luot_xem', 12);
+
+    $items = hang_hoa_select_keyword($kyw);
 }
 $hh_db = hang_hoa_select_dac_biet();
 $ds_loai = loai_select_all();

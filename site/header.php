@@ -48,11 +48,11 @@
           </a>
       </div>
       <div class="col-lg-6 col-6 text-left">
-          <form action="liet-ke.php" method="GET">
+          <form action="liet-ke.php?timkiem" method="GET">
               <div class="input-group">
                   <input type="text" class="form-control" name="kyw" placeholder="Tìm kiếm">
                   <div class="input-group-append">
-                      <button class="btn bg-primary" type="submit" name="timkiem">
+                      <button class="btn bg-primary" type="submit" name="">
                           <i class="fa fa-search"></i>
                       </button>
                   </div>
